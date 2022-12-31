@@ -705,7 +705,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 20
   field of view: 60
   orthographic: 0
@@ -804,7 +804,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1368874961
 Transform:
   m_ObjectHideFlags: 0
@@ -968,7 +968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedLibrary: {fileID: 11400000, guid: 8f7e806a34a0dea47bb77bbfa42f7d67,
     type: 2}
-  m_MaxNumberOfMovingImages: 0
+  m_MaxNumberOfMovingImages: 2
   m_TrackedImagePrefab: {fileID: 0}
 --- !u!114 &1659859602
 MonoBehaviour:
@@ -1009,6 +1009,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9abeba5ac5137a47bba0f714c26c680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ArPrefabs:
+  ArPrefabsToPlace:
   - {fileID: 6509030706286265343, guid: 3781c22717603ac488054c7854af5fa0, type: 3}
   - {fileID: 7720131995740072691, guid: d411687bc7bad7b4c8b81a1e6f576b96, type: 3}
