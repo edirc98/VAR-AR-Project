@@ -150,16 +150,16 @@ RectTransform:
   m_GameObject: {fileID: 47603541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1239688099}
   m_Father: {fileID: 52584459}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -777}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 200, y: 170}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &47603543
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74a4b7665e17c034ba309eb4ab839ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arObjectToSpawn: {fileID: 3590169380440387970, guid: 5267298296dfeb84397259910cf631da,
+  arObjectToSpawn: {fileID: 6509030706286265343, guid: 3781c22717603ac488054c7854af5fa0,
     type: 3}
   placementIndicator: {fileID: 1368874960}
   JoystickCanvas: {fileID: 52584455}
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 1354141927}
   m_Layer: 0
   m_Name: AR Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -813,7 +813,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368874960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 550.5, y: 281, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -832,7 +832,6 @@ GameObject:
   - component: {fileID: 1435971377}
   - component: {fileID: 1435971380}
   - component: {fileID: 1435971379}
-  - component: {fileID: 1435971378}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -849,26 +848,12 @@ Transform:
   m_GameObject: {fileID: 1435971376}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1368874961}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!64 &1435971378
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1435971376}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1435971379
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1025,5 +1010,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArPrefabs:
-  - {fileID: 3590169380440387970, guid: 5267298296dfeb84397259910cf631da, type: 3}
-  - {fileID: 6292736319605574474, guid: 292f1e6399e49f94a822e572ceb000cb, type: 3}
+  - {fileID: 6509030706286265343, guid: 3781c22717603ac488054c7854af5fa0, type: 3}
+  - {fileID: 7720131995740072691, guid: d411687bc7bad7b4c8b81a1e6f576b96, type: 3}
