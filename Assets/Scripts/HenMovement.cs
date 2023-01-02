@@ -14,10 +14,15 @@ public class HenMovement : MonoBehaviour
     private Vector3 looktoTarget; 
 
     private bool findNewPos = true;
-    private bool movingToPos = false; 
+    private bool movingToPos = false;
+
+    private Animator _henAnimator; 
 
     // Start is called before the first frame update
-
+    private void Start()
+    {
+        _henAnimator = GetComponent<Animator>(); 
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -25,6 +30,7 @@ public class HenMovement : MonoBehaviour
         {
             if (findNewPos)
             {
+                _henAnimator.SetBool("Run", false);
                 currentPos = transform.position;
                 newPos = new Vector3(currentPos.x + Random.Range(-radius, radius), 0, currentPos.z + Random.Range(-radius, radius));
                 looktoTarget = (newPos - currentPos).normalized;
@@ -33,6 +39,7 @@ public class HenMovement : MonoBehaviour
             }
             if (movingToPos)
             {
+                _henAnimator.SetBool("Run", true);
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(looktoTarget), Time.deltaTime * rotationSpeed);
 
                 transform.position = Vector3.MoveTowards(transform.position, newPos, Time.deltaTime * movementSpeed);
