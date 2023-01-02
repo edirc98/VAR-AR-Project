@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 7720131995740072690}
   - component: {fileID: 7720131995740072689}
   - component: {fileID: 7720131995740072688}
-  - component: {fileID: 1117598975647854042}
-  - component: {fileID: -7901235010443466395}
   m_Layer: 0
   m_Name: TargetHen
   m_TagString: Hen
@@ -48,24 +46,24 @@ LODGroup:
   m_GameObject: {fileID: 7720131995740072691}
   serializedVersion: 2
   m_LocalReferencePoint: {x: 0, y: 1.0742176, z: -0.10640675}
-  m_Size: 2.14423
+  m_Size: 1
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.95
+  - screenRelativeHeight: 0.4430495
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7720131995721466394}
-  - screenRelativeHeight: 0.7
+  - screenRelativeHeight: 0.32645753
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7720131995733708000}
-  - screenRelativeHeight: 0.35
+  - screenRelativeHeight: 0.16322877
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7720131996157803235}
-  - screenRelativeHeight: 0.05
+  - screenRelativeHeight: 0.023318395
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7720131995648609904}
@@ -84,43 +82,6 @@ CapsuleCollider:
   m_Height: 1.8831515
   m_Direction: 1
   m_Center: {x: 0, y: 0.9540212, z: 0}
---- !u!114 &1117598975647854042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7720131995740072691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce3cc495a623d564d97551b41b8182bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isMoving: 0
-  radius: 1
-  minDistanceToPos: 0.1
-  movementSpeed: 0.4
-  rotationSpeed: 5
---- !u!95 &-7901235010443466395
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7720131995740072691}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9ed787b3dbf3938488ca3e63b67d1ee5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &7720131995637007824
 PrefabInstance:
   m_ObjectHideFlags: 0

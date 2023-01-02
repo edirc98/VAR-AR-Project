@@ -7,6 +7,8 @@ using UnityEngine.XR.ARSubsystems;
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class PlaceTrackedImages : MonoBehaviour
 {
+    public bool IsHenInstanced = false;
+    public GameObject HenPrefab; 
     // Reference to AR tracked image manager component
     private ARTrackedImageManager _trackedImagesManager;
 
@@ -25,6 +27,7 @@ public class PlaceTrackedImages : MonoBehaviour
             GameObject newArObject = Instantiate(arPrefab, Vector3.zero, Quaternion.identity);
             newArObject.name = arPrefab.name;
             _ArPrefabs.Add(arPrefab.name, newArObject);
+            newArObject.SetActive(false);
         }
     }
 
@@ -45,6 +48,12 @@ public class PlaceTrackedImages : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             UpdateARImage(trackedImage);
+            if (!IsHenInstanced)
+            {
+                Instantiate(HenPrefab, trackedImage.transform.position, Quaternion.identity);
+                IsHenInstanced = true;
+            }
+
             //var imageName = trackedImage.referenceImage.name;
             //foreach (var curPrefab in ArPrefabsToPlace)
             //{
@@ -81,13 +90,13 @@ public class PlaceTrackedImages : MonoBehaviour
         {
             _ArPrefabs[name].SetActive(true);
             _ArPrefabs[name].transform.position = position;
-            foreach(GameObject go in _ArPrefabs.Values)
-            {
-                if(go.name != name)
-                {
-                    go.SetActive(false);
-                }
-            }
+            //foreach(GameObject go in _ArPrefabs.Values)
+            //{
+            //    if(go.name != name)
+            //    {
+            //        go.SetActive(false);
+            //    }
+            //}
         }
     }
 }

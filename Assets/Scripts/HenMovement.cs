@@ -13,8 +13,6 @@ public class HenMovement : MonoBehaviour
     private Vector3 currentPos;
     private Vector3 looktoTarget; 
 
-    private float pos = 0; 
-
     private bool findNewPos = true;
     private bool movingToPos = false; 
 
@@ -41,7 +39,6 @@ public class HenMovement : MonoBehaviour
                 if (Vector3.Distance(transform.position, newPos) < minDistanceToPos)
                 {
                     movingToPos = false;
-                    pos = 0;
                     findNewPos = true;
                 }
             }
