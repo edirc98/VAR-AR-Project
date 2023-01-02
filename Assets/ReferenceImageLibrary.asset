@@ -27,7 +27,7 @@ MonoBehaviour:
       m_GuidHigh: 9265049996152515961
     m_Size: {x: 0.05, y: 0.05}
     m_SpecifySize: 0
-    m_Name: ControledFox
+    m_Name: Fox
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5709423101334411019

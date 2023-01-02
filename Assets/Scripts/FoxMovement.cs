@@ -18,14 +18,17 @@ public class FoxMovement : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
     void Start()
     {
-        _ARObject = GameObject.FindGameObjectWithTag("Fox");
         _ARCamera = Camera.main; 
     }
 
     private void Update()
     {
-       
+        if(_ARObject == null)
+        {
+            _ARObject = GameObject.FindGameObjectWithTag("Fox");
+        }
     }
+
     public void OnDrag(PointerEventData eventData)
     {
         transform.position = eventData.position;

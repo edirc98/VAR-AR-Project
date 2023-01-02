@@ -911,7 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePad: {fileID: 47603542}
-  moveSpeed: 0.05
+  moveSpeed: 0.1
 --- !u!1 &1354141925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1262,9 @@ MonoBehaviour:
   IsHenInstanced: 0
   HenPrefab: {fileID: 7720131995740072691, guid: 5202b661f39633344ba5bb9a259b2937,
     type: 3}
+  IsFoxInstanced: 0
+  FoxPrefab: {fileID: 6509030706286265343, guid: 3781c22717603ac488054c7854af5fa0,
+    type: 3}
   ArPrefabsToPlace:
-  - {fileID: 6509030706286265343, guid: 3781c22717603ac488054c7854af5fa0, type: 3}
+  - {fileID: 6509030706286265343, guid: 16200826c00edfb4cadca4fe2d9fb404, type: 3}
   - {fileID: 7720131995740072691, guid: d411687bc7bad7b4c8b81a1e6f576b96, type: 3}

@@ -8,7 +8,10 @@ using UnityEngine.XR.ARSubsystems;
 public class PlaceTrackedImages : MonoBehaviour
 {
     public bool IsHenInstanced = false;
-    public GameObject HenPrefab; 
+    public GameObject HenPrefab;
+
+    public bool IsFoxInstanced = false;
+    public GameObject FoxPrefab; 
     // Reference to AR tracked image manager component
     private ARTrackedImageManager _trackedImagesManager;
 
@@ -48,11 +51,7 @@ public class PlaceTrackedImages : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             UpdateARImage(trackedImage);
-            if (!IsHenInstanced)
-            {
-                Instantiate(HenPrefab, trackedImage.transform.position, Quaternion.identity);
-                IsHenInstanced = true;
-            }
+            
 
             //var imageName = trackedImage.referenceImage.name;
             //foreach (var curPrefab in ArPrefabsToPlace)
@@ -88,8 +87,8 @@ public class PlaceTrackedImages : MonoBehaviour
     {
         if(ArPrefabsToPlace != null)
         {
-            _ArPrefabs[name].SetActive(true);
             _ArPrefabs[name].transform.position = position;
+            _ArPrefabs[name].SetActive(true);
             //foreach(GameObject go in _ArPrefabs.Values)
             //{
             //    if(go.name != name)
@@ -97,6 +96,17 @@ public class PlaceTrackedImages : MonoBehaviour
             //        go.SetActive(false);
             //    }
             //}
+
+            if (!IsHenInstanced && name == "TargetHen")
+            {
+                Instantiate(HenPrefab, position, Quaternion.identity);
+                IsHenInstanced = true;
+            }
+            if(!IsFoxInstanced && name == "Fox")
+            {
+                Instantiate(FoxPrefab, position, Quaternion.identity);
+                IsFoxInstanced = true;
+            }
         }
     }
 }
