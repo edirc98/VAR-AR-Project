@@ -1,79 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 
-public class FoxMovement : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
+public class FoxMovement : MonoBehaviour
 {
+    public float MovementSpeed; 
+    private Animator FoxAnimator;
+    [SerializeField]
+    private JoystickMovement _joysickMovement; 
 
-    public RectTransform gamePad;
-    public float moveSpeed = 0.05f;
-
-    private Camera _ARCamera; 
-    private GameObject _ARObject;
-    private Vector3 move;
-
-    bool running;
-
+    private void Awake()
+    {
+        FoxAnimator = GetComponent<Animator>();
+        _joysickMovement = GameObject.Find("Joystick").GetComponent<JoystickMovement>();
+    }
     void Start()
     {
-        _ARCamera = Camera.main; 
+        
     }
 
     private void Update()
     {
-        if(_ARObject == null)
+        if(_joysickMovement != null)
         {
-            _ARObject = GameObject.FindGameObjectWithTag("Fox");
-        }
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        transform.position = eventData.position;
-        transform.localPosition = Vector2.ClampMagnitude(eventData.position - (Vector2)gamePad.position, gamePad.rect.width * 0.5f);
-
-        Vector3 joystickMovement = transform.localPosition.normalized;
-
-
-        move = new Vector3(transform.localPosition.x, 0f, transform.localPosition.y).normalized; // no movement in y
-        //move = _ARObject.transform.forward;
-
-        Debug.Log(move);
-        if (!running)
-        {
-            running = true;
-            _ARObject.GetComponent<Animator>().SetBool("Run", true); // on drag start the Run animation
-        }
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        // do the movement when touched down
-        StartCoroutine(PlayerMovement());
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        transform.localPosition = Vector3.zero; // joystick returns to mean pos when not touched
-        move = Vector3.zero;
-        StopCoroutine(PlayerMovement());
-        running = false;
-        _ARObject.GetComponent<Animator>().SetBool("Run", false);
-    }
-
-    IEnumerator PlayerMovement()
-    {
-        while (true)
-        {
-            _ARObject.transform.Translate(move * moveSpeed * Time.deltaTime, Space.World);
-
-            if (move != Vector3.zero)
+            if (_joysickMovement.IsPointerDown)
             {
-                _ARObject.transform.rotation = Quaternion.Slerp(_ARObject.transform.rotation, Quaternion.LookRotation(move), Time.deltaTime * 5.0f);
+                //IF POINTER IS DOWN , FOX IS MOVING IN MOVE DIR
+                Vector3 newPos = transform.position + _joysickMovement.JoystickDir; 
+                transform.position = Vector3.MoveTowards(transform.position, newPos, Time.deltaTime * MovementSpeed);
+
+                //APLY MOVE ANIMATION
+                FoxAnimator.SetBool("Run", true);
             }
-            yield return null;
         }
     }
 }

@@ -68,6 +68,12 @@ public class GameManager : MonoBehaviour
         StartButton.gameObject.SetActive(false);
         PlaceInPlane(); 
     }
+
+
+    public void TESTInstanceFox()
+    {
+        FoxInstance = Instantiate(FoxPrefab, Vector3.zero, Quaternion.identity);
+    }
 }
 
 

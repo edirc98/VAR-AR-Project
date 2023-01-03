@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6509030706286265089}
   - component: {fileID: 6509030706286265090}
   - component: {fileID: 8555175931354638308}
+  - component: {fileID: 701763407128537689}
   m_Layer: 0
   m_Name: ControledFox
   m_TagString: Fox
@@ -52,19 +53,19 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.95
-    fadeTransitionWidth: 0
-    renderers:
-    - renderer: {fileID: 6509030705851897017}
   - screenRelativeHeight: 0.7
     fadeTransitionWidth: 0
     renderers:
+    - renderer: {fileID: 6509030705851897017}
+  - screenRelativeHeight: 0.45
+    fadeTransitionWidth: 0
+    renderers:
     - renderer: {fileID: 6509030705775649465}
-  - screenRelativeHeight: 0.35
+  - screenRelativeHeight: 0.15
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6509030705161017995}
-  - screenRelativeHeight: 0.05
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6509030705282245947}
@@ -103,6 +104,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &701763407128537689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509030706286265343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0b1d50e0180544fa3c159c7142beac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamePad: {fileID: 0}
+  moveSpeed: 0.05
 --- !u!1001 &6509030705172484395
 PrefabInstance:
   m_ObjectHideFlags: 0
