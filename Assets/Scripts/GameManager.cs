@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     [Header("UI Elements")]
     public Button StartButton;
+    public GameObject Score;
 
 
     private GameObject FoxPlaceholder;
@@ -58,14 +60,17 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        Score.SetActive(true);
+
         FoxInstance = Instantiate(FoxPrefab, FoxPlaceholder.transform.position, Quaternion.identity);
         HenPlaceInstance = Instantiate(HenPlacePrefab, HenPlaceholder.transform.position, Quaternion.identity);
-        HenPlaceInstance.GetComponent<HenSpawner>().activateSpawner = true; 
+        HenPlaceInstance.GetComponent<HenSpawner>().activateSpawner = true;
 
         HenPlaceholder.GetComponent<MeshRenderer>().enabled = false;
         FoxPlaceholder.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
 
         StartButton.gameObject.SetActive(false);
+        
         PlaceInPlane(); 
     }
 

@@ -8,6 +8,8 @@ TagManager:
   - Hen
   - PlaceholderHen
   - PlaceholderFox
+  - ScoreText
+  - Canvas
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 
 public class FoxMovement : MonoBehaviour
@@ -12,6 +13,8 @@ public class FoxMovement : MonoBehaviour
     private Animator FoxAnimator;
     [SerializeField]
     private JoystickMovement _joysickMovement;
+    private int score=0;
+    private TextMeshProUGUI scoreText;
 
 
     private Vector3 looktoTarget;
@@ -21,6 +24,7 @@ public class FoxMovement : MonoBehaviour
     {
         FoxAnimator = GetComponent<Animator>();
         _joysickMovement = GameObject.Find("Joystick").GetComponent<JoystickMovement>();
+        scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
     }
     void Start()
     {
@@ -63,6 +67,8 @@ public class FoxMovement : MonoBehaviour
             HenDeathParticles.Play();
             Destroy(other.gameObject);
             //FoxAnimator.SetBool("Attack", false);
+            score += 1;
+            scoreText.text = "Eaten chickens: " + score.ToString();
         }
     }
 }
