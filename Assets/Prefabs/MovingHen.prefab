@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7720131995740072691}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.030000001, y: 0.030000001, z: 0.030000001}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7720131995733070640}
@@ -65,7 +65,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7720131996157803235}
-  - screenRelativeHeight: 0.023318395
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 7720131995648609904}
@@ -97,10 +97,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isMoving: 1
-  radius: 1
+  radius: 0.7
   minDistanceToPos: 0.1
   movementSpeed: 0.1
   rotationSpeed: 5
+  henPlaceTransform: {fileID: 0}
 --- !u!95 &-7901235010443466395
 Animator:
   serializedVersion: 4

@@ -27,7 +27,7 @@ MonoBehaviour:
       m_GuidHigh: 9265049996152515961
     m_Size: {x: 0.05, y: 0.05}
     m_SpecifySize: 0
-    m_Name: Fox
+    m_Name: FoxPlaceholder
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5709423101334411019
@@ -37,5 +37,5 @@ MonoBehaviour:
       m_GuidHigh: 10470945815809047240
     m_Size: {x: 0.05, y: 0.05}
     m_SpecifySize: 0
-    m_Name: TargetHen
+    m_Name: HenPlacePlaceholder
     m_Texture: {fileID: 0}

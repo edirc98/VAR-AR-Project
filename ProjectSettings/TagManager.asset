@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fox
   - Hen
+  - PlaceholderHen
+  - PlaceholderFox
   layers:
   - Default
   - TransparentFX

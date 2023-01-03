@@ -8,7 +8,8 @@ public class HenMovement : MonoBehaviour
     public float radius;
     public float minDistanceToPos;
     public float movementSpeed;
-    public float rotationSpeed; 
+    public float rotationSpeed;
+    public Transform henPlaceTransform;
     private Vector3 newPos;
     private Vector3 currentPos;
     private Vector3 looktoTarget; 
@@ -21,7 +22,7 @@ public class HenMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        _henAnimator = GetComponent<Animator>(); 
+        _henAnimator = GetComponent<Animator>();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -32,7 +33,8 @@ public class HenMovement : MonoBehaviour
             {
                 _henAnimator.SetBool("Run", false);
                 currentPos = transform.position;
-                newPos = new Vector3(currentPos.x + Random.Range(-radius, radius), 0, currentPos.z + Random.Range(-radius, radius));
+                newPos = (Random.insideUnitSphere * radius) + henPlaceTransform.position; 
+                newPos = new Vector3(newPos.x,henPlaceTransform.position.y,newPos.z);
                 looktoTarget = (newPos - currentPos).normalized;
                 findNewPos = false;
                 movingToPos = true;
@@ -54,8 +56,6 @@ public class HenMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, radius);
-
         Gizmos.DrawLine(currentPos, newPos);
 
         Gizmos.color = new Color(1,0,0,0.5f);

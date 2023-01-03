@@ -7,11 +7,6 @@ using UnityEngine.XR.ARSubsystems;
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class PlaceTrackedImages : MonoBehaviour
 {
-    public bool IsHenInstanced = false;
-    public GameObject HenPrefab;
-
-    public bool IsFoxInstanced = false;
-    public GameObject FoxPrefab; 
     // Reference to AR tracked image manager component
     private ARTrackedImageManager _trackedImagesManager;
 
@@ -51,30 +46,16 @@ public class PlaceTrackedImages : MonoBehaviour
         foreach (var trackedImage in eventArgs.added)
         {
             UpdateARImage(trackedImage);
-            
-
-            //var imageName = trackedImage.referenceImage.name;
-            //foreach (var curPrefab in ArPrefabsToPlace)
-            //{
-            //    if (string.Compare(curPrefab.name, imageName, StringComparison.OrdinalIgnoreCase) == 0 && !_ArPrefabs.ContainsKey(imageName))
-            //    {
-            //        var newPrefab = Instantiate(curPrefab, trackedImage.transform);
-            //        _ArPrefabs[imageName] = newPrefab;
-            //    }
-            //}
         }
 
         foreach (ARTrackedImage trackedImage in eventArgs.updated)
         {
             UpdateARImage(trackedImage); 
-        //    _instatiatedPrefabs[trackedImage.referenceImage.name].SetActive(trackedImage.trackingState == TrackingState.Tracking);
         }
 
         foreach (ARTrackedImage trackedImage in eventArgs.removed)
         {
             _ArPrefabs[trackedImage.name].SetActive(false);
-        //    Destroy(_instatiatedPrefabs[trackedImage.referenceImage.name]);
-        //    _instatiatedPrefabs.Remove(trackedImage.referenceImage.name);
         }
     }
 
@@ -89,24 +70,6 @@ public class PlaceTrackedImages : MonoBehaviour
         {
             _ArPrefabs[name].transform.position = position;
             _ArPrefabs[name].SetActive(true);
-            //foreach(GameObject go in _ArPrefabs.Values)
-            //{
-            //    if(go.name != name)
-            //    {
-            //        go.SetActive(false);
-            //    }
-            //}
-
-            if (!IsHenInstanced && name == "TargetHen")
-            {
-                Instantiate(HenPrefab, position, Quaternion.identity);
-                IsHenInstanced = true;
-            }
-            if(!IsFoxInstanced && name == "Fox")
-            {
-                Instantiate(FoxPrefab, position, Quaternion.identity);
-                IsFoxInstanced = true;
-            }
         }
     }
 }
