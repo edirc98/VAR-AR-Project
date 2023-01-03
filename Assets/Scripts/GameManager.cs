@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         HenPlaceInstance.GetComponent<HenSpawner>().activateSpawner = true; 
 
         HenPlaceholder.GetComponent<MeshRenderer>().enabled = false;
-        FoxPlaceholder.GetComponentInChildren<MeshRenderer>().enabled = false;
+        FoxPlaceholder.GetComponentInChildren<SkinnedMeshRenderer>().enabled = false;
 
         StartButton.gameObject.SetActive(false);
         PlaceInPlane(); 
