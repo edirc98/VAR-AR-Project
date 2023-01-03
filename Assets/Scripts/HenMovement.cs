@@ -20,7 +20,7 @@ public class HenMovement : MonoBehaviour
     private Animator _henAnimator; 
 
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         _henAnimator = GetComponent<Animator>();
     }

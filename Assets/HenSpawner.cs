@@ -9,7 +9,6 @@ public class HenSpawner : MonoBehaviour
     public float timeBetweenSpawns;
     public float movementRadius = 1; 
     public bool SpawnHen = true;
-    public List<GameObject> ActiveHens;
 
     // Update is called once per frame
     void Update()
@@ -28,7 +27,6 @@ public class HenSpawner : MonoBehaviour
                 GameObject newHen = Instantiate(HenPrefab, transform.position, Quaternion.identity);
                 newHen.transform.parent = transform;
                 newHen.GetComponent<HenMovement>().henPlaceTransform = transform;
-                ActiveHens.Add(newHen);
                 StartCoroutine("SpawnNewHenCorutine");
             }
         }

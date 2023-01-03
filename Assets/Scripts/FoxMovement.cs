@@ -6,7 +6,8 @@ using UnityEngine;
 public class FoxMovement : MonoBehaviour
 {
     public float MovementSpeed;
-    public float RotationSpeed; 
+    public float RotationSpeed;
+    public ParticleSystem HenDeathParticles; 
     [SerializeField]
     private Animator FoxAnimator;
     [SerializeField]
@@ -48,6 +49,20 @@ public class FoxMovement : MonoBehaviour
             {
                 FoxAnimator.SetBool("Run", false);
             }
+        }
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Collision");
+        if (other.gameObject.CompareTag("Hen") == true)
+        {
+            //FoxAnimator.SetBool("Attack", true); 
+            //We have collided with a Hen, so we kill it
+            HenDeathParticles.Play();
+            Destroy(other.gameObject);
+            //FoxAnimator.SetBool("Attack", false);
         }
     }
 }
